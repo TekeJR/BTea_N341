@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="BrendanTeaGettingStartedCSS">
+        <title> BTea Website</title>
+    </head>
+    <body>
+        <h1>Brendan Tea's Website</h1>
+        <h3>CSCI N341</h3>
+        <br>
+        <p id="mainbody">
+            This is the main body text
+        </p>
+        <br>
+        <h3>Contact Me</h3>
+        <p id="contact">
+            Email: <a href="mailto:teke453jr@gmail.com">teke453jr@gmail.com</a>
+        </p>
+
+    </body>
+</html>
