@@ -1,10 +1,15 @@
-body {
-    background-color: aquamarine;
-}
+
 h1 {
     color: black;
+    letter-spacing: 3px;
 }
-p {
-    background-color: black;
-    color: yellow;
+
+#main {
+    line-height: 1.5;
+    background-color:azure
+}
+.contact {
+    border: 2px solid black;
+    text-align: center;
+    font-weight: bold;
 }
