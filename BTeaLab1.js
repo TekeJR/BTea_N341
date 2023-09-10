@@ -39,3 +39,31 @@ eggs[3] = eggs[3] * 4;
 eggs[4] = eggs[4] % 2;
 
 output("eggNumALT", eggs);
+
+var garTonk = {
+    name: "Garlic Tonkatsu Ramen",
+    eggs: 2,
+    seaweed: true,
+    menma: true,
+    moyashi: true,
+    details: function() {
+        return "Name: " + this.name + ", Egg Num: " + this.eggs + ", Seaweed: " + this.seaweed + ", Menma: " + this.menma + ", Moyashi: " + this.moyashi;
+    },
+    addEgg: function() {
+        this.eggs++; 
+        return "New Egg Amount: " + this.eggs;
+    },
+    eggMath: function() {
+        this.eggs = Math.pow(this.eggs, 4);
+        return "Powered Egg Amount: " + this.eggs;
+    },
+    displayTime: function() {
+        const d = new Date();
+        return d;
+    }
+}
+
+output("garObj", garTonk.details());
+output("garEggs", garTonk.addEgg());
+output("mathEggs", garTonk.eggMath());
+output("time", garTonk.displayTime());
