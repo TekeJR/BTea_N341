@@ -18,6 +18,7 @@
             <p id="visible">Message Update:</p>
             <div id="message"><h2></h2></div>
             <form action="javascriptthingy">
+
                 <legend>Information:</legend>
                 <label for="name">Name:</label><br>
                 <input type="text" id="name" name="userName"><br>
@@ -27,28 +28,45 @@
                 <input type="text" id="phone" name="phoneNum"><br>
                 <label for="address">Address:</label><br>
                 <input type="text" id="address" name="userAddress"><br>
+
                 <legend>Ramen:</legend>
                 <input type="radio" id="GarlicTonk" name="ramen">
                 <label>Garlic Tonkatsu Ramen</label>
                 <p id="visible">Garlic Tonkastu Description Update:</p>
                 <p id="GarlicTonkDesc">A rich ramen made with pork and chicken bone broth simmered over 12 hours per day. 
                     Served traditionally with garlic, pork belly, seaweed, moyashi and green onions.</p>
+
                 <input type="radio" id="Tonk" name="ramen">
                 <label>Tonkatsu Ramen</label>
                 <p>A rich, classic ramen that consists of bone broth, pork belly, moyashi as well as green onion.</p>
+
                 <input type="radio" id="Shoyu" name="ramen">
                 <label>Shoyu Ramen</label>
                 <p>A light ramen made with pork bones simmered for several hours. It captures a soy flavor with pork belly, seaweed, yasai, and green onion.</p>
+                
+                <p>Additional Types of Ramen:</p>
+                <p id="ramenTypes"></p>
+                <p>And here are the Ramen types, but they look different</p>
+                <p id="ramenTypesALT"></p>
+
+                <p>Number of Eggs: </p>  
+                <p id="eggNum"></p>
+                <p>Random numbers of Eggs:</p>
+                <p id="eggNumALT"></p>
+
                 <legend>Izakaya:</legend>
                 <input type="radio" id="Karaage" name="izakaya">
                 <label>Karaage</label>
                 <p>Marinated chicken fried served with a lemon slice and spicy mayo.</p>
+
                 <input type="radio" id="Gyoza" name="izakaya">
                 <label>Pork Gyoza</label>
                 <p>Gyoza with pork filling pan fried to perfection.</p>
+
                 <input type="radio" id="Takoyaki" name="izakaya">
                 <label>Takoyaki</label>
                 <p>Ball-shaped food made of wheat flour-based batter with octopus filling, topped with bonito flakes, seaweed powder, okonomi sauce, and japanese mayonnaise.</p>
+
                 <input class="button" type="submit" value="Submit Order" onclick="submitForm()">
             </form>
             <p id="visible">Footer Update:</p>
