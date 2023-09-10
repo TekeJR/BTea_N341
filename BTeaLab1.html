@@ -1,19 +1,22 @@
 <!--
     Title: BTeaLab1.html
     Author: Brendan Tea
-    Purpose: To get familiar with HTML, CSS, and Javascript to make a simple website
-    Originally created on: 8/24/23
-    Last modified on: 8/27/23
+    Purpose: Using Expressions, Functions, and Objects.
+    Originally created on: 9/8/23
+    Last modified on: 9/9/23
 -->
 <!DOCTYPE html>
-
+<!--My theme is an online order page based off of the restaurant I work at-->
  <html lang="en">
     <head>
+        <link rel="stylesheet" href="BTeaLab1.css">
         <title>Kizuki Online Order Form</title>
     </head>
     <body>
         <div class="main">
             <h1>Kizuki Order Form</h1>
+            <p id="visible">Message Update:</p>
+            <div id="message"><h2></h2></div>
             <form action="javascriptthingy">
                 <legend>Information:</legend>
                 <label for="name">Name:</label><br>
@@ -27,7 +30,8 @@
                 <legend>Ramen:</legend>
                 <input type="radio" id="GarlicTonk" name="ramen">
                 <label>Garlic Tonkatsu Ramen</label>
-                <p>A rich ramen made with pork and chicken bone broth simmered over 12 hours per day. 
+                <p id="visible">Garlic Tonkastu Description Update:</p>
+                <p id="GarlicTonkDesc">A rich ramen made with pork and chicken bone broth simmered over 12 hours per day. 
                     Served traditionally with garlic, pork belly, seaweed, moyashi and green onions.</p>
                 <input type="radio" id="Tonk" name="ramen">
                 <label>Tonkatsu Ramen</label>
@@ -47,7 +51,10 @@
                 <p>Ball-shaped food made of wheat flour-based batter with octopus filling, topped with bonito flakes, seaweed powder, okonomi sauce, and japanese mayonnaise.</p>
                 <input class="button" type="submit" value="Submit Order" onclick="submitForm()">
             </form>
+            <p id="visible">Footer Update:</p>
+            <p id="footer">Thank you</p>
         </div>
+    <script src="BTeaLab1.js"></script>
     </body>
     </div>
  </html>

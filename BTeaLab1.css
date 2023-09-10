@@ -1,0 +1,35 @@
+/*
+    Title: BTeaLab1.css
+    Author: Brendan Tea
+    Purpose: Using Expressions, Functions and Objects
+    Originally created on: 9/9/23
+    Last modified on: 9/9/23
+*/
+h1 {
+    color: black;
+    background-color: lightgrey;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+body {
+    font-family: Helvetica, sans serif;
+}
+
+legend {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+p {
+    color: black;
+    background-color: lightgrey;
+}
+
+#visible {
+    font-size: 1em;
+    font-weight: bold;
+}
