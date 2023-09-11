@@ -2,8 +2,8 @@
     Title: BTeaLab1.js
     Author: Brendan Tea
     Purpose: Using expressions, functions, and objects. 
-    Originally created on: 8/27/23
-    Last modified on: 8/27/23
+    Originally created on: 9/9/23
+    Last modified on: 9/10/23
 */
 var  strMessage = "";
 var intNum = 0;
