@@ -5,3 +5,50 @@
     Originally created on: 9/9/23
     Last modified on: 9/10/23
 */
+h1 {
+    color: black;
+    background-color: lightgrey;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+body {
+    font-family: Helvetica, sans serif;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+p {
+    color: black;
+}
+
+.visible {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.answer {
+    font-weight: bold;
+    background-color: lightgrey;
+}
+
+/*#ramenTypes {
+    font-weight: bold;
+}
+
+#ramenTypesALT {
+    font-weight: bold;
+}
+
+#eggNum {
+    font-weight: bold;
+}
+
+#eggNumALT {
+    font-weight: bold;
+}
