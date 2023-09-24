@@ -137,9 +137,12 @@ output("switch", daySwitch());
 var elParseConcat = document.getElementById("ParseCon");
 var elParse = document.getElementById("Parse");
 
+elParseConcat.textContent = "Parse normal results:  20 + 10 = " + ("20" + 10); // Req 7: Use ParseInt to demonstrate 2 digits stored as strings and adding the same 2 digits as integers.
+
 function parse(numDigit) {
-    numDigit = parseInt(numDigit);
+    //elParseConcat.textContent = "Parse normal results: " + numDigit + " + 10 = " + (numDigit + 10);
+    numDigit = parseInt(numDigit); // Req 7: Use ParseInt to demonstrate 2 digits stored as strings and adding the same 2 digits as integers.
     elParse.textContent = "ParseInt result: " + numDigit + " + 10 = " + (numDigit + 10);
 };
 
-parse(eggs[0]);
+parse(20);
