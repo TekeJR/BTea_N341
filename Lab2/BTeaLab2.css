@@ -1,9 +1,9 @@
 /*
-    Title: BTeaLab1.css
+    Title: BTeaLab2.css
     Author: Brendan Tea
-    Purpose: Using Expressions, Functions and Objects
-    Originally created on: 9/9/23
-    Last modified on: 9/10/23
+    Purpose: Using Decisions and Loops, Manipulating DOM
+    Originally created on: 9/20/23
+    Last modified on: 9/24/23
 */
 h1 {
     color: black;
@@ -37,6 +37,10 @@ p {
     background-color: lightgrey;
 }
 
+.demoClass {
+    font-weight: bold;
+    background-color: lightgrey;
+}
 /*#ramenTypes {
     font-weight: bold;
 }

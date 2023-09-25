@@ -1,9 +1,9 @@
 /*
     Title: BTeaLab2.js
     Author: Brendan Tea
-    Purpose: Using expressions, functions, and objects. 
+    Purpose: Using Decisions and Loops, Manipulating DOM
     Originally created on: 9/20/23
-    Last modified on: 9/23/23
+    Last modified on: 9/24/23
 */
 var  strMessage = "";
 var intNum = 0;
@@ -94,7 +94,7 @@ function andOP() { // Req 5: Use 2 logical operations.
         return "Error";
     }
 };
-function orOP() { // Req 5: Use 2 logical operations.
+function orOP() { // Req 5 & 11: Use 2 logical operations. Use Falsey value, not boolean.
     if (garTonk.seaweed || garTonk.moyashi) {
         return "OR Logical Operator result: There is not seaweed in the ramen, but there is moyashi.";
     } else {
@@ -142,7 +142,77 @@ elParseConcat.textContent = "Parse normal results:  20 + 10 = " + ("20" + 10); /
 function parse(numDigit) {
     //elParseConcat.textContent = "Parse normal results: " + numDigit + " + 10 = " + (numDigit + 10);
     numDigit = parseInt(numDigit); // Req 7: Use ParseInt to demonstrate 2 digits stored as strings and adding the same 2 digits as integers.
-    elParse.textContent = "ParseInt result: " + numDigit + " + 10 = " + (numDigit + 10);
+    elParse.textContent = "ParseInt result: " + numDigit + " + 10 = " + (numDigit + 10); // Req 12: Select a single page element and change it with textContent.
 };
 
 parse(20);
+
+function equalsComparison() { // Req 8 & 10: Demonstrate difference between == and ===. Use Truthy value, not boolean.
+    var strEdona = "1";
+    var intEdona = 1;
+    if (strEdona == intEdona) {
+        return "strEdona == intEdona = True";
+    } else {
+        return "strEdona === intEdona = False";
+    };
+};
+function equalsComparisonType() { // Req 8: Demonstrate difference between == and ===.
+    var strEdona = "1";
+    var intEdona = 1;
+    if (strEdona === intEdona) {
+        return "strEdona == intEdona = True";
+    } else {
+        return "strEdona === intEdona = False";
+    };
+};
+
+output("equalcomp1", equalsComparison());
+output("equalcomp2", equalsComparisonType());
+
+function LoopEx() { // Req 9: Use a loop to output the contents of an array.
+    let text = "";
+    //let elPrint = document.getElementById("loop"); // first iteration of loop
+    for (let i = 0; i < ramen.length; i++) {
+        text += ramen[i] + "<br>";
+        
+    };
+    //return elPrint.textContent = "Loop result: " + text; // first iteration of loop
+    return "Loop: " + text; // revised loop
+};
+output("loop", LoopEx());
+
+const classExample = document.getElementsByClassName("demoClass"); // Req 13: Selecting 3 elements by attribute, using innerHTML and changing formatting as well.
+document.getElementById("demo").innerHTML =  "Selecting multiple elements, changing formatting and content: " + classExample[0].innerHTML;
+const classExamplecss = document.getElementsByClassName("demoClass");
+document.getElementById("demo").style.color = "red";
+
+function classLoop() { // Unfinished Req 14: Loop through req 13 selection and add a class to each element.
+    const classDemo = document.getElementById("classloop");
+    for (let i = 0; i <classExample.length; i++) {
+        classDemo.classList.add("newClass");
+    };
+};
+
+function elementOutput() { // Req 15: Demonstrate different between innerHTML and textContent for outputting and HTML element with content.
+    var innerElement =  document.getElementById("innerElement");
+    var message = "<em>Inner Element Output</em>"
+    return innerElement.innerHTML = message;
+};
+output("innerElement", elementOutput());
+
+function contentElementOutput() { // Req 15: Demonstrate different between innerHTML and textContent for outputting and HTML element with content.
+    var contentElement = document.getElementById("contentElement");
+    var message = "<em>Text Content Element Output</em>"
+    return contentElement.textContent = message; // I'm not sure why this isn't working, I followed the example given in the assignment, all that's different is putting it into a function.
+};
+output("contentElement", contentElementOutput());
+
+var tag = document.createElement("p");
+var note = document.createTextNode("This text is added in the javascript!");
+tag.appendChild(note);
+document.getElementById("parent").appendChild(tag); // Req 16: Add page element with content to the page.
+
+document.getElementById("changeID").setAttribute("id", "IDisChanged") // Req 17 & 18: select a page element based on ID and change the value of the ID. Must show visible results
+document.getElementById("IDisChanged").innerHTML = "ID has been changed!";
+
+document.getElementById("footer").remove(); // Req 19: Remove a page element

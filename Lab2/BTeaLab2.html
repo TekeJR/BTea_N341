@@ -3,7 +3,7 @@
     Author: Brendan Tea
     Purpose: Using Decisions and Loops, Manipulating DOM.
     Originally created on: 9/20/23
-    Last modified on: 9/20/23
+    Last modified on: 9/24/23
 -->
 <!DOCTYPE html>
 <!--My theme is an online order page based off of the restaurant I work at-->
@@ -13,7 +13,7 @@
         <title>Kizuki Online Order Form</title>
     </head>
     <body>
-        <div class="main">
+        <div id="main" class="main">
             <h1>Kizuki Order Form</h1>
             <p class="answer">Message Update:</p>
             <div id="message"></div>
@@ -66,7 +66,16 @@
                 <p id="switch" class="answer"></p>
                 <p id="ParseCon" class="answer"></p>
                 <p id="Parse" class="answer"></p>
-
+                <p id="equalcomp1" class="demoClass"></p>
+                <p id="equalcomp2" class="demoClass"></p>
+                <p id="loop" class="demoClass"></p>
+                <p id="demo" class="demoClass">placeholdertext</p>
+                <p id="classloop">placeholder</p>
+                <h3 id="innerElement">placeholder</h3>
+                <h3 id="contentElement">placeholder</h3>
+                <p id="parent" class="error"></p>
+                <p id="changeID" class="answer"></p>
+                
                 <h2>Izakaya:</h2>
                 <input type="radio" id="Karaage" name="izakaya">
                 <label>Karaage</label>
@@ -82,7 +91,7 @@
 
                 <input class="button" type="submit" value="Submit Order" onclick="submitForm()">
             </form>
-            <p class="answer">Footer Update:</p>
+            <p class="answer">Footer is removed using JS:</p>
             <p id="footer">Thank you</p>
         </div>
     <script src="BTeaLab2.js"></script>
