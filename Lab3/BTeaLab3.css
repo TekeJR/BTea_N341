@@ -5,3 +5,8 @@
     Originally created on: 10/3/23
     Last modified on: 10/3/23
 */
+
+.answer {
+    font-weight: bold;
+    background-color: lightgrey;
+}
