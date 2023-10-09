@@ -12,36 +12,40 @@
         <link rel="stylesheet" href="BTeaLab3.css">
         <title>Kizuki Online Order Form</title>
     </head>
-    <body>
+    <body onbeforeunload="return leavePage()">
         <div id="main">
             <h1>Kizuki Order Form</h1>
-            <h2>Ramen Selection</h2>
+            <p class="answer">Click on the "Ramen Selection" for mutation event.</p>
+            <h2 onclick="ChangeText(this)">Ramen Selection</h2>
+            <p class="answer">Hover over Garlic Tonk for change</p>
+            <p class="answer">Check the console log to see the bubbling when clicking the "Bubble" button.</p>
+            <p class="answer">Click on Shoyu, shio, and Miso to show click events</p>
             <dl>
-                <p class="answer">Hover over Garlic Tonk for change</p>
                 <dt id="GarTonk">Garlic Tonkatsu</dt>
-                <button onclick="GarDesc()">Description</button>
                 <dd id="garTonkDesc" class="answer"></dd>
                 <dt>Tonkatsu</dt>
-                <button>Bubble Button</button>
-                <p class="answer">Check the console log to see the bubbling when clicking this button.</p>
-                <dd>- A rich, classic ramen that consists of bone broth, pork belly, moyashi as well as green onion.</dd>
-                <dt>Shoyu</dt>
+                <dt id="Shoyu" class="answer">Shoyu - Click me to stop event bubbling in Console.</dt>
                 <dd>- A light ramen made with pork bones simmered for several hours. It captures a soy flavor with pork belly, seaweed, yasai, and green onion.</dd>
-                <dt>Shio</dt>
+                <dt id="Shio">Shio</dt>
                 <dd>- A light ramen made with pork bones simmered for several hours. Less soy flavor with pork belly, seaweed, yasai, and green onion.</dd>
-                <dt>Miso</dt>
+                <dt id="Miso">Miso</dt>
                 <dd>- A heavy ramen crafted with awase miso paste that combines tonkatsu pork broth with light pork/chicken broth to make a savor flavor. Served with corn, moyashi, and menma.</dd>
+                
             </dl>
+            <label id="Lnotes" for="notes" class="answer">Notes: (click for focus/blur; type for keyboard events)</label>
+            <input type="text" id="notes" name="notes" onfocus="noteColor()" onblur="noteColorReg()" onkeypress="ColorText()" onkeyup="ColorTextReg()" onchange="ChangeAlert(this.value)"><br>
+            <button>Bubble</button><br>
+            <button onclick="GarDesc()">Description</button><br>
             <h2>Izakaya</h2>
-            <ul>
+            <dl>
                 <dt>Chicken Karaage</dt>
                 <dd>- Marinated chicken fried served with a lemon slice and spicy mayo.</dd>
                  <dt>Pork Gyoza</dt>
                  <dd>- Gyoza with pork filling pan fried to perfection.</dd>
                  <dt>Takoyaki</dt>
                  <dd>- Ball-shaped food made of wheat flour-based batter with octopus filling, topped with bonito flakes, seaweed powder, okonomi sauce, and japanese mayonnaise.</dd>
-             </ul>
-
+             </dl>
+            <p class="answer">Press F5 to get the alert before you leave the page.</p>
             <input class="button" type="submit" value="Submit Order" onclick="submitForm()">
 
         </div>
