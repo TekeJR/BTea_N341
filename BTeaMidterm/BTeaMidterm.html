@@ -1,0 +1,87 @@
+<!--
+    Title: BTeaMidterm.html
+    Author: Brendan Tea
+    Purpose: Culmination of Javascript skills thus far 
+    Originally created on: 10/15/23
+    Last modified on: 10/15/23
+-->
+<!DOCTYPE html>
+<!--My theme is an online order page based off of the restaurant I work at-->
+ <html lang="en">
+    <head>
+        <link rel="stylesheet" href="BTeaMidterm.css">
+        <title>Kizuki Online Order Form</title>
+    </head>
+    <body>
+            <h1>Kizuki Order Form</h1>
+            <p class="visible">Message Update:</p>
+            <div id="message"></div>
+            <div class="main">
+            <form action="javascriptthingy">
+
+                <div class="info">
+                <h2>Information:</h2>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="userName"><br>
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email"><br>
+                <label for="phone">Phone Number:</label><br>
+                <input type="text" id="phone" name="phoneNum"><br>
+                <label for="address">Address:</label><br>
+                <input type="text" id="address" name="userAddress"><br>
+                </div>
+
+                <div class="ramen">
+                <h2>Ramen:</h2>
+                <input type="radio" id="GarlicTonk" name="ramen">
+                <label>Garlic Tonkatsu Ramen</label>
+                <p class="visible">Garlic Tonkastu</p>
+                <p id="GarlicTonkDesc">A rich ramen made with pork and chicken bone broth simmered over 12 hours per day. 
+                    Served traditionally with garlic, pork belly, seaweed, moyashi and green onions.</p>
+                <p><b>Garlic Tonk Object:</b></p>
+                <p id="garObj"></p>
+                <p id="garEggs"></p>
+                <p id="mathEggs"></p>
+                <p id="time"></p>
+                <input type="radio" id="Tonk" name="ramen">
+                <label>Tonkatsu Ramen</label>
+                <p>A rich, classic ramen that consists of bone broth, pork belly, moyashi as well as green onion.</p>
+
+                <input type="radio" id="Shoyu" name="ramen">
+                <label>Shoyu Ramen</label>
+                <p>A light ramen made with pork bones simmered for several hours. It captures a soy flavor with pork belly, seaweed, yasai, and green onion.</p>
+                
+                <p>Additional Types of Ramen:</p>
+                <p id="ramenTypes"></p>
+                <p>And here are the Ramen types, but they look different</p>
+                <p id="ramenTypesALT"></p>
+
+                <p>Number of Eggs: </p>  
+                <p id="eggNum"></p>
+                <p>Random numbers of Eggs:</p>
+                <p id="eggNumALT"></p>
+                </div>
+
+                <div class="iza">
+                <h2>Izakaya:</h2>
+                <input type="radio" id="Karaage" name="izakaya">
+                <label>Karaage</label>
+                <p>Marinated chicken fried served with a lemon slice and spicy mayo.</p>
+
+                <input type="radio" id="Gyoza" name="izakaya">
+                <label>Pork Gyoza</label>
+                <p>Gyoza with pork filling pan fried to perfection.</p>
+
+                <input type="radio" id="Takoyaki" name="izakaya">
+                <label>Takoyaki</label>
+                <p>Ball-shaped food made of wheat flour-based batter with octopus filling, topped with bonito flakes, seaweed powder, okonomi sauce, and japanese mayonnaise.</p>
+                </div>
+                
+                <input class="button" type="submit" value="Submit Order" onclick="submitForm()">
+            </form>
+            <p class="visible">Footer Update:</p>
+            <p id="footer">Thank you</p>
+        </div>
+    <script src="BTeaLab1.js"></script>
+    </body>
+ </html>
