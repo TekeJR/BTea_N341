@@ -5,6 +5,7 @@ h2 {
     text-align: center;
     border-bottom-style: dashed;
 }
+
 body {
     background-color: black;
     margin: 250px;
@@ -24,7 +25,18 @@ label {
     font-size: 15pt;
 }
 
-.main {
+.visible {
+    font-weight: bold;
+}
+.midmessage {
+    text-align: center;
+}
+#addIza {
+    border-style: double; 
+    display: block;
+}
+
+#main {
     background-color: #f2f2f2;
     padding: 20px;
     border-radius: 50px;
@@ -36,4 +48,9 @@ label {
 
 #dayCycle {
     text-align: center;
+}
+
+.newStyle {
+    background-color: gold;
+    text-decoration: underline;
 }
