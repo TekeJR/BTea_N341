@@ -1,35 +1,39 @@
-h2 {
+h1 {
     text-align: center;
 }
-body{
+h2 {
+    text-align: center;
+    border-bottom-style: dashed;
+}
+body {
     background-color: black;
-    
+    margin: 250px;
+}
+input[type=text] {
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+}
+input[type=submit] {
+    text-align: center;
+    padding: 12px 20px;
+    width: 100%;
+    border-radius: 5px;
+}
+label {
+    font-size: 15pt;
 }
 
 .main {
     background-color: #f2f2f2;
     padding: 20px;
     border-radius: 50px;
-    
 }
 
-.info {
-    background-color: grey;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 10px;
+#time {
+    text-align: center;
 }
 
-.ramen {
-    background-color: grey;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.iza {
-    background-color: grey;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 10px;
+#dayCycle {
+    text-align: center;
 }

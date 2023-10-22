@@ -13,36 +13,45 @@
         <title>Kizuki Online Order Form</title>
     </head>
     <body>
-            <h1>Kizuki Order Form</h1>
-            <p class="visible">Message Update:</p>
-            <div id="message"></div>
+            
             <div class="main">
             <form action="javascriptthingy">
 
                 <div class="info">
-                <h2>Information:</h2>
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="userName"><br>
-                <label for="email">Email:</label><br>
-                <input type="text" id="email" name="email"><br>
-                <label for="phone">Phone Number:</label><br>
-                <input type="text" id="phone" name="phoneNum"><br>
-                <label for="address">Address:</label><br>
-                <input type="text" id="address" name="userAddress"><br>
+                <h1>Kizuki Order Form</h1>
+                <b><p id="dayCycle"></p></b>
+                <b><p id="time"></p></b>
+
+                <h2>Customer Details</h2>
+                <label for="name">Name</label><br>
+                <input type="text" id="fname" name="userFName" placeholder="First Name..." onfocus="bgColorChange('fname')" onblur="bgColorChangeReg('fname')">
+                <input type="text" id="lname" name="userLName" placeholder="Last Name..."onfocus="bgColorChange('lname')" onblur="bgColorChangeReg('lname')"><br>
+                <label for="email">Email</label><br>
+                <input type="text" id="email" name="email" onfocus="bgColorChange('email')" onblur="bgColorChangeReg('email')"><br>
+                <label for="phone">Phone Number</label><br>
+                <input type="text" id="phone" name="phoneNum" onfocus="bgColorChange('phone')" onblur="bgColorChangeReg('phone')"><br>
+                <label for="address">Delivery Address</label><br>
+                <input type="text" id="strAddress1" name="userAddress" placeholder="Street Address..." onfocus="bgColorChange('strAddress1')" onblur="bgColorChangeReg('strAddress1')"><br>
+                <input type="text" id="strAddress2" name="userAddress" placeholder="Street Address Line 2..."onfocus="bgColorChange('strAddress2')" onblur="bgColorChangeReg('strAddress2')"><br>
+                <input type="text" id="city" name="userAddress" placeholder="City..." onfocus="bgColorChange('city')" onblur="bgColorChangeReg('city')">
+                <input type="text" id="state" name="userAddress" placeholder="State..." onfocus="bgColorChange('state')" onblur="bgColorChangeReg('state')"><br>
+                <input type="text" id="zipCode" name="userAddress" placeholder="Zipcode..." onfocus="bgColorChange('zipCode')" onblur="bgColorChangeReg('zipCode')"><br>
                 </div>
 
                 <div class="ramen">
-                <h2>Ramen:</h2>
+                <h2>Ramen</h2>
                 <input type="radio" id="GarlicTonk" name="ramen">
-                <label>Garlic Tonkatsu Ramen</label>
-                <p class="visible">Garlic Tonkastu</p>
+                <label>Garlic Tonkatsu Ramen (Most Popular!)</label>
                 <p id="GarlicTonkDesc">A rich ramen made with pork and chicken bone broth simmered over 12 hours per day. 
                     Served traditionally with garlic, pork belly, seaweed, moyashi and green onions.</p>
-                <p><b>Garlic Tonk Object:</b></p>
-                <p id="garObj"></p>
-                <p id="garEggs"></p>
-                <p id="mathEggs"></p>
-                <p id="time"></p>
+                <input type="button" value="Garlic Tonk's Details" onclick="redColorText('garlicRamen')"><br>
+                <b><p id="garlicRamen"></p></b>
+                <b><p id="garlicPlusEgg"></p></b>
+                <b><p id="garlicEggMath"></p></b>
+                <b><p id="garlicMinusEgg"></p></b>
+                <b><p id="ifElse" class="answer"></p></b>
+                <b><p id="equalto" class="answer"></p></b>
+                <b><p id="AND" class="answer"></p></b>
                 <input type="radio" id="Tonk" name="ramen">
                 <label>Tonkatsu Ramen</label>
                 <p>A rich, classic ramen that consists of bone broth, pork belly, moyashi as well as green onion.</p>
@@ -50,20 +59,16 @@
                 <input type="radio" id="Shoyu" name="ramen">
                 <label>Shoyu Ramen</label>
                 <p>A light ramen made with pork bones simmered for several hours. It captures a soy flavor with pork belly, seaweed, yasai, and green onion.</p>
-                
-                <p>Additional Types of Ramen:</p>
-                <p id="ramenTypes"></p>
-                <p>And here are the Ramen types, but they look different</p>
-                <p id="ramenTypesALT"></p>
-
-                <p>Number of Eggs: </p>  
-                <p id="eggNum"></p>
-                <p>Random numbers of Eggs:</p>
-                <p id="eggNumALT"></p>
+                <input type="button" value="Additional Ramen Options (Double click again for concat)" onclick="listAddRamen('addRamen')" ondblclick="ArrayConcat('addRamenConcat')"><br>
+                <span><b>Array: </b></span>
+                <p id="addRamen"></p>
+                <b><p id="addRamenConcat"></p></b>
+                <b><p id="loop"></p></b>
                 </div>
 
+
                 <div class="iza">
-                <h2>Izakaya:</h2>
+                <h2>Izakaya</h2>
                 <input type="radio" id="Karaage" name="izakaya">
                 <label>Karaage</label>
                 <p>Marinated chicken fried served with a lemon slice and spicy mayo.</p>
@@ -77,11 +82,20 @@
                 <p>Ball-shaped food made of wheat flour-based batter with octopus filling, topped with bonito flakes, seaweed powder, okonomi sauce, and japanese mayonnaise.</p>
                 </div>
                 
+                <h2>Order Total</h2>
+                <p><strong>Subtotal is: </strong> </p>
+                <p id="subtotal"></p>
+                <p><strong>Tax: </strong></p>
+                <p id="tax"></p>
+                <p><strong>Your Total is: </strong></p>
+                <p id="orderTotal"></p>
+                
                 <input class="button" type="submit" value="Submit Order" onclick="submitForm()">
             </form>
-            <p class="visible">Footer Update:</p>
-            <p id="footer">Thank you</p>
+            <input class="button" type="button" value="Hide Footer" onclick="removeFooter()">
+            <p id="footer">Thank you for using my website!</p>
         </div>
-    <script src="BTeaLab1.js"></script>
+
+    <script src="BTeaMidterm.js"></script>
     </body>
  </html>
