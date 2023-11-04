@@ -1,0 +1,102 @@
+<!--
+    Title: BTeaMidterm.html
+    Author: Brendan Tea
+    Purpose: Culmination of Javascript skills thus far 
+    Originally created on: 10/15/23
+    Last modified on: 10/22/23
+-->
+<!DOCTYPE html>
+<!--My theme is an online order page based off of the restaurant I work at-->
+ <html lang="en">
+    <head>
+    <meta charset="utf-8">
+        <link rel="stylesheet" href="BTeaLab4.css">
+        <title>Kizuki Online Order Form</title>
+    </head>
+    <body id="body" onbeforeunload="return leavePage()">
+            
+            <div id="main">
+            <form id="form">
+
+                <div id="info">
+                <h1>Kizuki Order Form (hover for 2 animation effects)</h1>
+                <p class="visible" id="message">Welcome to the online order site for Kizuki! (removed class)</p>
+
+                <h2>Customer Details</h2>
+                <label>Name</label><br>
+                <input type="text" id="fname" name="userFName" placeholder="First Name...">
+                <input type="text" id="lname" name="userLName" placeholder="Last Name..."><br>
+                <label>Email</label><br>
+                <input type="text" id="email" name="email"><br>
+                <label>Phone Number</label><br>
+                <input type="text" id="phone" name="phoneNum"><br>
+                <label>Delivery Address</label><br>
+                <input type="text" id="strAddress1" name="userAddress" placeholder="Street Address..."><br>
+                <input type="text" id="strAddress2" name="userAddress" placeholder="Street Address Line 2..."><br>
+                <input type="text" id="city" name="userAddress" placeholder="City...">
+                <input type="text" id="state" name="userAddress" placeholder="State..."><br>
+                <input type="text" id="zipCode" name="userAddress" placeholder="Zipcode..."><br>
+                </div>
+
+                <div id="ramen">
+                <h2>Ramen</h2>
+                <input type="radio" id="GarlicTonk" name="ramen">
+                <label id="gTonkLabel">Garlic Tonkatsu Ramen</label>
+                <p id="GarlicTonkDesc">A rich ramen made with pork and chicken bone broth simmered over 12 hours per day. 
+                    Served traditionally with garlic, pork belly, seaweed, moyashi and green onions.</p>
+                <button type="button" id="garTonkSale">Click for Sale! (.append)</button><br>
+
+                <input type="radio" id="Tonk" name="ramen">
+                <label>Tonkatsu Ramen (filtered selection, chaining, addClass)</label>
+                <p>A rich, classic ramen that consists of bone broth, pork belly, moyashi as well as green onion.</p>
+
+                <input type="radio" id="Shoyu" name="ramen">
+                <label>Shoyu Ramen</label>
+                <p>A light ramen made with pork bones simmered for several hours. It captures a soy flavor with pork belly, seaweed, yasai, and green onion.</p>
+                </div>
+
+
+                <div id="iza">
+                <h2>Izakaya (Weekend Special!)</h2>
+                <button type="button" id="izaPopular">Click for Popular Items! (.each() function)</button><br>                <input type="radio" id="Karaage" name="izakaya">
+                <label class="izafood">Karaage (background gold with select by class)</label>
+                <p>Marinated chicken fried served with a lemon slice and spicy mayo.</p>
+
+                <input type="radio" id="Gyoza" name="izakaya">
+                <label class="izafood">Pork Gyoza</label>
+                <p>Gyoza with pork filling pan fried to perfection.</p>
+
+                <input type="radio" id="Takoyaki" name="izakaya">
+                <label class="izafood">Takoyaki</label>
+                <p>Ball-shaped food made of wheat flour-based batter with octopus filling, topped with bonito flakes, seaweed powder, okonomi sauce, and japanese mayonnaise.</p><br>
+                
+                <div id="addIza">
+                <span>Additional Izakaya Options (click here for bubbling in console)</span>
+                <ul>
+                    <li>Edamame (click me for no event bubbling in console)</li>
+                    <li>Potato Croquette</li>
+                    <li>Karaage Bun</li>
+                    <li>Pork Bun</li>
+                </ul>
+                </div>
+                </div>
+                
+                <div id="total">
+                <h2>Order Total</h2>
+                <p><strong>Subtotal is: </strong> </p>
+                <p id="subtotal"></p>
+                <p><strong>Tax: </strong></p>
+                <p id="tax"></p>
+                <p><strong>Your Total is: </strong></p>
+                <p id="orderTotal"></p>
+                </div>
+                <input id="submitbtn" class="button" type="submit" value="Submit Order">
+            </form>
+            
+            <p id="footer">Thank you for using my website!</p>
+        </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="BTeaLab4.js"></script>
+    </body>
+ </html>
