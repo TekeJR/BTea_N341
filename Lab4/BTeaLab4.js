@@ -47,6 +47,30 @@ $('h1').on({
     }
 });
 
+//Req 18: 
+var body = $("body");
+var div = $('div');
+var label = $('label');
+var p = $('p');
+
+$(body).click(function(){
+    console.log("body clicked");
+});
+
+$(div).click(function(){
+    console.log("div clicked");
+});
+
+$(label).click(function(){
+    console.log("label clicked");
+});
+
+$(p).click(function(){
+    event.stopPropagation();
+    console.log("p clicked");
+    
+});
+
 //Req 19: Use at least 3 jquery effects to change the page.
 $('h2').hover(function(){
         $('h2').slideUp();
@@ -55,6 +79,20 @@ $('h2').hover(function(){
         $('h2').slideDown();
 });
 
+//Req 20: Use 2 jquery methods to traverse DOM to access parent or sibling node of a previous selection, change it.
+$('#GarlicTonkDesc').parent().css({"border": "2px solid red"});
+
+$("#iza").children().css({"text-decoration-line": "underline", "text-decoration-style": "dashed", "text-decoration-color": "red"});
+
+//Req 21: Use 2 jquery selectors the use form element selectors. Make changes or send values to an output area.
+$(":submit").css("background-color", "red");
+
+$(":text").css("background-color", "gold")
+
+//Req 22: Remove an element from the page. 
+$("#delFooter").click(function(){
+    $("#footer").remove();
+});
 
 });
 

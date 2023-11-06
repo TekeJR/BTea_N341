@@ -21,9 +21,12 @@
                 <div id="info">
                 <h1>Kizuki Order Form (hover for 2 animation effects)</h1>
                 <p class="visible" id="message">Welcome to the online order site for Kizuki! (removed class)</p>
+                <p class="visible">Console for event object propagation</p>
 
                 <h2>Customer Details</h2>
-                <label>Name</label><br>
+                <label>Date Picker</label><br>
+                <input type="date" id="datepicker"><br>
+                <label>Name (input boxes are :text selectors)</label><br>
                 <input type="text" id="fname" name="userFName" placeholder="First Name...">
                 <input type="text" id="lname" name="userLName" placeholder="Last Name..."><br>
                 <label>Email</label><br>
@@ -39,7 +42,7 @@
                 </div>
 
                 <div id="ramen">
-                <h2>Ramen</h2>
+                <h2>Ramen (red outline is parent div of "p")</h2>
                 <input type="radio" id="GarlicTonk" name="ramen">
                 <label id="gTonkLabel">Garlic Tonkatsu Ramen</label>
                 <p id="GarlicTonkDesc">A rich ramen made with pork and chicken bone broth simmered over 12 hours per day. 
@@ -57,7 +60,7 @@
 
 
                 <div id="iza">
-                <h2>Izakaya (Weekend Special!)</h2>
+                <h2>Izakaya (Weekend Special!) (Red underline are children of izakaya div)</h2>
                 <button type="button" id="izaPopular">Click for Popular Items! (.each() function)</button><br>                <input type="radio" id="Karaage" name="izakaya">
                 <label class="izafood">Karaage (background gold with select by class)</label>
                 <p>Marinated chicken fried served with a lemon slice and spicy mayo.</p>
@@ -90,13 +93,15 @@
                 <p><strong>Your Total is: </strong></p>
                 <p id="orderTotal"></p>
                 </div>
-                <input id="submitbtn" class="button" type="submit" value="Submit Order">
+                <input id="submitbtn" class="button" type="submit" value="Submit Order (form selector 'submit')">
             </form>
             
+            <button type="button" id="delFooter">Click to remove footer using Jquery</button>
             <p id="footer">Thank you for using my website!</p>
         </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://plugins.jquery.com/ui.datepicker"></script>
     <script src="BTeaLab4.js"></script>
     </body>
  </html>
