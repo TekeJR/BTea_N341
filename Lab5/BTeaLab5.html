@@ -10,7 +10,8 @@
  <html lang="en">
     <head>
     <meta charset="utf-8">
-        <link rel="stylesheet" href="BTeaLab4.css">
+        <link rel="stylesheet" href="BTeaLab5.css">
+        <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
         <title>Kizuki Online Order Form</title>
     </head>
     <body id="body">
@@ -33,6 +34,8 @@
 
                 <div id="customer">
                 <h2>Customer Details</h2>
+                <p class="visible">Enter a date (Date picker): </p>
+                <input type="text" id="datepicker"><br>
                 <label>Name</label><br>
                 <input type="text" id="fname" name="userFName" placeholder="First Name...">
                 <input type="text" id="lname" name="userLName" placeholder="Last Name..."><br>
@@ -100,14 +103,15 @@
                 <p><strong>Your Total is: </strong></p>
                 <p id="orderTotal"></p>
                 </div>
-                <input id="submitbtn" class="button" type="submit" value="Submit Order (form selector 'submit')">
+                <input id="submitbtn" class="button" type="submit" value="Submit Order">
             </form>
             
-            <button type="button" id="delFooter">Click to remove footer using Jquery</button>
             <p id="footer">Thank you for using my website!</p>
         </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="BTeaLab4.js"></script>
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>   
+    <script src= "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" ></script>
+    <script src="BTeaLab5.js"></script>
     </body>
  </html>

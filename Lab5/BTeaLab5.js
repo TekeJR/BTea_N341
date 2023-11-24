@@ -8,3 +8,4 @@
 //Tabs UI
 $('#tabs').tabs();
 
+$('#datepicker').datepicker();
