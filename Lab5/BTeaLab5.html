@@ -22,20 +22,31 @@
                 <h1>Kizuki Order Form</h1>
                 <p class="visible" id="message">Welcome to the online order site for Kizuki!</p>
 
+                <div class="tabs">
+                    <p><b>Table of Contents (tabs UI)</b></p>
+                <ul>
+                    <li><a href="#customer">Tab One</a></li>
+                    <li><a href="#ramen">Tab Two</a></li>
+                    <li><a href="#iza">Tab Three</a></li>
+                </ul>
+                </div>
+
+                <div id="customer">
                 <h2>Customer Details</h2>
                 <label>Name</label><br>
                 <input type="text" id="fname" name="userFName" placeholder="First Name...">
                 <input type="text" id="lname" name="userLName" placeholder="Last Name..."><br>
                 <label>Email</label><br>
-                <input type="text" id="email" name="email"><br>
+                <input type="email" id="email" name="email"><br>
                 <label>Phone Number</label><br>
-                <input type="text" id="phone" name="phoneNum"><br>
+                <input type="tel" id="phone" name="phoneNum"><br>
                 <label>Delivery Address</label><br>
                 <input type="text" id="strAddress1" name="userAddress" placeholder="Street Address..."><br>
                 <input type="text" id="strAddress2" name="userAddress" placeholder="Street Address Line 2..."><br>
                 <input type="text" id="city" name="userAddress" placeholder="City...">
                 <input type="text" id="state" name="userAddress" placeholder="State..."><br>
                 <input type="text" id="zipCode" name="userAddress" placeholder="Zipcode..."><br>
+                </div>
                 </div>
 
                 <div id="ramen">
@@ -97,7 +108,6 @@
         </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://plugins.jquery.com/ui.datepicker"></script>
     <script src="BTeaLab4.js"></script>
     </body>
  </html>

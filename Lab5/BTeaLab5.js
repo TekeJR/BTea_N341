@@ -5,4 +5,6 @@
     Originally created on: 11/22/23
     Last modified on: 11/22/23
 */
+//Tabs UI
+$('#tabs').tabs();
 
