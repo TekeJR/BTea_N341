@@ -17,7 +17,7 @@
     <body id="body">
             
             <div id="main">
-            <form id="form">
+            <form id="form" method="get" action="#formsubmit">
 
                 <div id="info">
                 <h1>Kizuki Order Form</h1>
@@ -37,8 +37,8 @@
                 <p class="visible">Enter a date (Date picker): </p>
                 <input type="text" id="datepicker"><br>
                 <label>Name</label><br>
-                <input type="text" id="fname" name="userFName" placeholder="First Name...">
-                <input type="text" id="lname" name="userLName" placeholder="Last Name..."><br>
+                <input type="text" id="fname" name="userFName" placeholder="John..." >
+                <input type="text" id="lname" name="userLName" placeholder="Doe..."><br>
                 <label>Email</label><br>
                 <input type="email" id="email" name="email"><br>
                 <label>Phone Number</label><br>
@@ -103,15 +103,25 @@
                 <p><strong>Your Total is: </strong></p>
                 <p id="orderTotal"></p>
                 </div>
+                <input id="resetbtn" class="button" type="reset" value="Reset">
                 <input id="submitbtn" class="button" type="submit" value="Submit Order">
             </form>
-            
+
+            <div id="outputArea">
+                <label id="OPnamelb">Name: </label>
+                <p id="OPname"></p>
+                <label id="OPemaillb">Email: </label>
+                <p id="OPemail"></p>
+                <label id="OPphonelb">Phone Number: </label>
+                <p id="OPphone"></p>
+                <label id="OPaddresslb">Address: </label>
+                <p id="OPaddress"></p>
+            </div>
             <p id="footer">Thank you for using my website!</p>
         </div>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>   
-    <script src= "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" ></script>
     <script src="BTeaLab5.js"></script>
     </body>
  </html>
