@@ -1,9 +1,9 @@
 /*
     Title: BTeaMidterm.js
     Author: Brendan Tea
-    Purpose: Culmination of Javascript skills thus far
+    Purpose: To use API's and Form Enhancement
     Originally created on: 11/22/23
-    Last modified on: 11/22/23
+    Last modified on: 11/26/23
 */
 // Many of the requirements are on the HTML file such as Req 4-8.
 //Tabs UI
