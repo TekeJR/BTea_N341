@@ -1,0 +1,125 @@
+<!--
+    Title: BTeaMidterm.html
+    Author: Brendan Tea
+    Purpose: Culmination of Javascript skills thus far 
+    Originally created on: 10/15/23
+    Last modified on: 10/22/23
+-->
+<!DOCTYPE html>
+<!--My theme is an online order page based off of the restaurant I work at-->
+ <html lang="en">
+    <head>
+    <meta charset="utf-8">
+        <link rel="stylesheet" href="BTeaMidterm.css">
+        <title>Kizuki Online Order Form</title>
+    </head>
+    <body id="body" onbeforeunload="return leavePage()">
+            
+            <div id="main">
+            <form id="form">
+
+                <div id="info">
+                <h1 onmouseover="changeText(this)">Kizuki Order Form</h1>
+                <p class="midmessage">Hover over title for mutation event ^</p>
+                <p class="visible" id="dayCycle"></p>
+                <p class="visible" id="time"></p>
+
+                <h2>Customer Details</h2>
+                <label>Name</label><br>
+                <input type="text" id="fname" name="userFName" placeholder="First Name..." onfocus="bgColorChange('fname')" onblur="bgColorChangeReg('fname')">
+                <input type="text" id="lname" name="userLName" placeholder="Last Name..." onfocus="bgColorChange('lname')" onblur="bgColorChangeReg('lname')"><br>
+                <label>Email</label><br>
+                <input type="text" id="email" name="email" onfocus="bgColorChange('email')" onblur="bgColorChangeReg('email')"><br>
+                <label>Phone Number</label><br>
+                <input type="text" id="phone" name="phoneNum" onfocus="bgColorChange('phone')" onblur="bgColorChangeReg('phone')"><br>
+                <label>Delivery Address</label><br>
+                <input type="text" id="strAddress1" name="userAddress" placeholder="Street Address..." onfocus="bgColorChange('strAddress1')" onblur="bgColorChangeReg('strAddress1')"><br>
+                <input type="text" id="strAddress2" name="userAddress" placeholder="Street Address Line 2..." onfocus="bgColorChange('strAddress2')" onblur="bgColorChangeReg('strAddress2')"><br>
+                <input type="text" id="city" name="userAddress" placeholder="City..." onfocus="bgColorChange('city')" onblur="bgColorChangeReg('city')">
+                <input type="text" id="state" name="userAddress" placeholder="State..." onfocus="bgColorChange('state')" onblur="bgColorChangeReg('state')"><br>
+                <input type="text" id="zipCode" name="userAddress" placeholder="Zipcode..." onfocus="bgColorChange('zipCode')" onblur="bgColorChangeReg('zipCode')"><br>
+                </div>
+
+                <div id="ramen">
+                <h2>Ramen</h2>
+                <input type="radio" id="GarlicTonk" name="ramen">
+                <label>Garlic Tonkatsu Ramen (Most Popular!)</label>
+                <p id="GarlicTonkDesc">A rich ramen made with pork and chicken bone broth simmered over 12 hours per day. 
+                    Served traditionally with garlic, pork belly, seaweed, moyashi and green onions.</p>
+                <input type="button" value="Garlic Tonk's Details (click for red)" onclick="redColorText('garlicRamen')"><br>
+                <p class="visible" id="garlicRamen"></p>
+
+                <div id="logic">
+                <p>Mouse over for event</p>
+                <p class="visible" id="garlicPlusEgg"></p>
+                <p class="visible" id="garlicEggMath"></p>
+                <p class="visible" id="garlicMinusEgg"></p>
+                <p class="visible" id="ifElse"></p>
+                <p class="visible" id="equalto"></p>
+                <p class="visible" id="OR"></p>
+                <p class="visible" id="Parse"></p>
+                </div>
+
+                <input type="radio" id="Tonk" name="ramen">
+                <label>Tonkatsu Ramen</label>
+                <p>A rich, classic ramen that consists of bone broth, pork belly, moyashi as well as green onion.</p>
+
+                <input type="radio" id="Shoyu" name="ramen">
+                <label>Shoyu Ramen</label>
+                <p>A light ramen made with pork bones simmered for several hours. It captures a soy flavor with pork belly, seaweed, yasai, and green onion.</p>
+                <input type="button" value="Additional Ramen Options (Double click again for concat)" onclick="listAddRamen('addRamen')" ondblclick="ArrayConcat('addRamenConcat')"><br>
+                <span class="visible">Array: </span>
+                <p id="addRamen"></p>
+                <p class="visible" id="addRamenConcat"></p>
+                <p class="visible" id="loop"></p>
+                </div>
+
+
+                <div id="iza">
+                <h2>Izakaya (Weekend Special!)</h2>
+                <button type="button" onclick="popIzaItem()" ondblclick="addNewStyleClass()">Click for Popular Items!</button><br>
+                <p>Double click to add new class! ^</p>
+                <input type="radio" id="Karaage" name="izakaya">
+                <label class="izafood">Karaage</label>
+                <p>Marinated chicken fried served with a lemon slice and spicy mayo.</p>
+
+                <input type="radio" id="Gyoza" name="izakaya">
+                <label class="izafood">Pork Gyoza</label>
+                <p>Gyoza with pork filling pan fried to perfection.</p>
+
+                <input type="radio" id="Takoyaki" name="izakaya">
+                <label class="izafood">Takoyaki</label>
+                <p>Ball-shaped food made of wheat flour-based batter with octopus filling, topped with bonito flakes, seaweed powder, okonomi sauce, and japanese mayonnaise.</p><br>
+                
+                <div id="addIza">
+                <span>Additional Izakaya Options (click here for bubbling in console)</span>
+                <ul>
+                    <li>Edamame (click me for no event bubbling in console)</li>
+                    <li>Potato Croquette</li>
+                    <li>Karaage Bun</li>
+                    <li>Pork Bun</li>
+                </ul>
+                </div>
+                </div>
+                
+                <div id="total">
+                <h2>Order Total</h2>
+                <p><strong>Subtotal is: </strong> </p>
+                <p id="subtotal"></p>
+                <p><strong>Tax: </strong></p>
+                <p id="tax"></p>
+                <p><strong>Your Total is: </strong></p>
+                <p id="orderTotal"></p>
+                </div>
+                <button type="button" id="subreminder">Reminder!</button><br>
+                <span class="visible" id="submitReminder"></span>
+                <input id="submitbtn" class="button" type="submit" value="Submit Order (form event)">
+            </form>
+            <input class="button" type="button" value="Hide Footer" onclick="removeFooter()">
+            
+            <p id="footer">Thank you for using my website!</p>
+        </div>
+
+    <script src="BTeaMidterm.js"></script>
+    </body>
+ </html>
