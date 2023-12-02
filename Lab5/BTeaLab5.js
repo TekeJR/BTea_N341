@@ -42,7 +42,7 @@ $form.on('submit', function(e){ //Req 9: Output area echos information entered i
     $('#outputArea').show();
 });
 
-function validateFirstName() { //Req 11: usse jquery to validate at least one input field, use placeholder to demonstrate an acceptable input.
+function validateFirstName() { //Req 11: use jquery to validate at least one input field, use placeholder to demonstrate an acceptable input.
     let fnameValue = $('#fname').val();
     if (fnameValue == ""){
         fNameError = false;

@@ -1,9 +1,9 @@
 /*9
     Title: BTeaMidterm.js
     Author: Brendan Tea
-    Purpose: Culmination of Javascript skills thus far
-    Originally created on: 10/15/23
-    Last modified on: 10/22/23
+    Purpose: Culmination of Javascript skills
+    Originally created on: 12/1/23
+    Last modified on: 12/1/23
 */
 //Setup functions
 function output(ID, newMessage) {
@@ -37,7 +37,7 @@ function LoopEx() { //Req 16: Use a loop.
 
 output("loop", LoopEx());
 //Garlic Ramen Object
-var garTonk = { //Req 7: Create and use an object that has properties and methods.
+var garTonk = { //Req 17: Create and use an object that has properties and methods.
     name: "Garlic Tonkatsu Ramen",
     chashu: true,
     chicken: false,
@@ -46,21 +46,21 @@ var garTonk = { //Req 7: Create and use an object that has properties and method
     menma: true,
     moyashi: true,
     edona: false,
-    details: function() { //Req 10: Use the keyword this.
+    details: function() { //Req 18: Use the keyword this.
         return "Name: " + this.name + "<br>Chashu: " + this.chashu + "<br>Chicken: " + this.chicken + "\
         <br>Eggs: " + this.eggs + "<br>Seaweed: " + this.seaweed + "<br>Menma: " + this.menma + "<br>Moyashi: " + this.moyashi + "<br>Edona: " + this.edona; 
     },
     addEgg: function() {
         this.eggs++; //Req 5: Use 2 arithmetic operators.
-        return "New Egg Amount (adding 1 egg): " + this.eggs; //Req 10: Use the keyword this.
+        return "New Egg Amount (adding 1 egg): " + this.eggs; //Req 18: Use the keyword this.
     },
     deleteEgg: function() {
         this.eggs--; //Req 5: Use 2 arithmetic operators.
-        return "New Egg Amount (delete 1 egg): " + this.eggs; //Req 10: Use the keyword this.
+        return "New Egg Amount (delete 1 egg): " + this.eggs; //Req 18: Use the keyword this.
     },
     eggMath: function() {
-        this.eggs = Math.pow(this.eggs, 4); //Req 8: Use a Math Object method.
-        return "Powered Egg Amount (Pow operator): " + this.eggs; //Req 10: Use the keyword this.
+        this.eggs = Math.pow(this.eggs, 4); //Req 15: Use a Math Object method.
+        return "Powered Egg Amount (Pow operator): " + this.eggs; //Req 18: Use the keyword this.
     }, // Req 11: Initialize object with values, call each of the methods and output modified values.
 };
 
@@ -71,7 +71,7 @@ output("garlicMinusEgg", garTonk.deleteEgg()); // Req 11: Initialize object with
 
 //Comparison and Operators
 function andOP() { 
-    if (garTonk.edona || garTonk.moyashi) { // Req 17 & 14: garTonk.edona is Falsy with no comparison operator. Use at least 1 logical operator.
+    if (garTonk.edona || garTonk.moyashi) { // Req 17 & 7: garTonk.edona is Falsy with no comparison operator. Use at least 1 logical operator.
         return "OR Logical Operator result: There is either edona or moyashi in the ramen.";
     } else {
         return "Error";
@@ -81,7 +81,7 @@ function andOP() {
 output("OR", andOP());
 
 function ifElseConstruct() {
-    if (eggs[1]<eggs[3]) { //Req 12 & 13: Use if/else construct or switch statement with at least three case values and a default code block. Use at least two comparison operators.
+    if (eggs[1]<eggs[3]) { //Req 5 & 6: Use if/else construct or switch statement with at least three case values and a default code block. Use at least two comparison operators.
         return "If-Else construct result: Eggs[3] is bigger than Eggs[1].";
     } else {
         return "If-Else construct result: Eggs[1] is bigger than Eggs[3]."
@@ -89,7 +89,7 @@ function ifElseConstruct() {
 };
 
 function equalTo() { 
-    if (eggs[2]!==eggs[4]) { //Req 12 & 13: Use if/else construct or switch statement with at least three case values and a default code block. Use at least two comparison operators.
+    if (eggs[2]!==eggs[4]) { //Req 5 & 6: Use if/else construct or switch statement with at least three case values and a default code block. Use at least two comparison operators.
         return "Equal to operator result: eggs[2] is NOT equal to eggs[4].";
     } else {
         return "Error";
@@ -103,7 +103,7 @@ output("equalto", equalTo());
 var elParse = document.getElementById("Parse"); //Req 21: Select a page element by ID.
 
 function parseGar(numGarlic) {
-    numGarlic = parseInt(numGarlic); // Req 15: Use ParseInt to convert a string to an integer.
+    numGarlic = parseInt(numGarlic); // Req 8: Use ParseInt to convert a string to an integer.
     elParse.textContent = "ParseInt garlic result: " + numGarlic + " \
     initial garlic scoops" + " + 5 additional garlic scoops = " + (numGarlic + 5) + " total garlic scoops."; // Req 18: Select a single page element and change it with textContent.
 };
@@ -112,13 +112,13 @@ parseGar("2");
 
 //Date Function
 function displayTime() {
-    const d = new Date(); //Req 9: Use a Date Object method.
+    const d = new Date(); //Req 16: Use a Date Object method.
     return "Date Object: " + d;
 };
 output("time", displayTime());
 
 //Day Function
-function daySwitch() { //Req 12: Use if/else construct or switch statement with at least three case values and a default code block. 
+function daySwitch() { //Req 5: Use if/else construct or switch statement with at least three case values and a default code block. 
  
     switch (5) { 
         case 0:
@@ -156,10 +156,17 @@ function popIzaItem() { //Req 20: Select page elements by class name.
     izakayaItemsSelection[1].innerHTML = "Pork Gyoza (#2 Popular Izakaya Item!)";
 };
 
-function addNewStyleClass() { //Req 23: Add class to existing page element.
-    var el = document.getElementById("iza"); //Req 21: Select a page element by ID.
-    el.classList.add("newStyle");
-};
+//JQuery
+$('footerBtn').click(function(){ //Req 9: use jQuery to remove or hide a page element.
+    $('footer').remove();
+});
+
+$('izaBtn').on({
+    dblclick: function() {
+        $('iza').addClass('newStyle');
+    }
+});
+
 //Events
 function bgColorChange(ID) { //Req 28: Create 2 focus/blur or focusin/focusout events. 
     var el = document.getElementById(ID); //Req 21: Select a page element by ID.
@@ -204,9 +211,7 @@ function changeText(val) { // Req 32: Create mutation event with visible results
     val.innerHTML = "Mutation Event! KiZuKi OrDeR fOrM";
 };
 
-function removeFooter() { //Req 22: Remove a page element.
-    document.getElementById("footer").remove(); //Req 21: Select a page element by ID.
-};
+
 
 var logicMouseOver = document.getElementById("logic"); 
 logicMouseOver.addEventListener("mouseover", function() { //Req 29: Create 2 mouse events with visible changes (mouseover event).
@@ -219,7 +224,7 @@ logicMouseOver.addEventListener("mouseout", function() { //Req 29: Create 2 mous
 
 var submitConfirmation = document.getElementById("subreminder"); //Req 24: Use event listener with parameter to produce visuble results on screen when user clicks page element.
 submitConfirmation.addEventListener("click", function() { //Req 29: Create 2 mouse events with visible changes (click event).
-    reminderClickEvent(this); //Req 10: Use the keyword this.
+    reminderClickEvent(this); //Req 18: Use the keyword this.
 });
 
 function reminderClickEvent(ID) {
