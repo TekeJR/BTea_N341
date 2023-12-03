@@ -10,9 +10,8 @@
  <html lang="en">
     <head>
     <meta charset="utf-8">
-        <link rel="stylesheet" href="BTeaFinal.css">
-        <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
-        <title>Kizuki Online Order Form</title>
+    <link rel="stylesheet" href="BTeaFinal.css">
+    <title>Kizuki Online Order Form</title>
     </head>
     <body id="body" onbeforeunload="return leavePage()">
             
@@ -26,10 +25,10 @@
                 <p class="visible" id="time"></p>
 
                 <h2>Customer Details</h2>
-                <label>Name</label><br>
+                <label>Name (click for focus/blur events)</label><br>
                 <input type="text" id="fname" name="userFName" placeholder="First Name..." onfocus="bgColorChange('fname')" onblur="bgColorChangeReg('fname')">
                 <input type="text" id="lname" name="userLName" placeholder="Last Name..." onfocus="bgColorChange('lname')" onblur="bgColorChangeReg('lname')"><br>
-                <label>Email</label><br>
+                <label>Email (every other label bolded and underlined, chaining as well)</label><br>
                 <input type="text" id="email" name="email" onfocus="bgColorChange('email')" onblur="bgColorChangeReg('email')"><br>
                 <label>Phone Number</label><br>
                 <input type="text" id="phone" name="phoneNum" onfocus="bgColorChange('phone')" onblur="bgColorChangeReg('phone')"><br>
@@ -44,10 +43,10 @@
                 <div id="ramen">
                 <h2>Ramen</h2>
                 <input type="radio" id="GarlicTonk" name="ramen">
-                <label>Garlic Tonkatsu Ramen (Most Popular!)</label>
+                <label id="gTonkLabel">Garlic Tonkatsu Ramen (Most Popular!)</label>
                 <p id="GarlicTonkDesc">A rich ramen made with pork and chicken bone broth simmered over 12 hours per day. 
                     Served traditionally with garlic, pork belly, seaweed, moyashi and green onions.</p>
-                <input type="button" value="Garlic Tonk's Details (click for red)" onclick="redColorText('garlicRamen')"><br>
+                <button id="GarlicObjBtn" type="button">Click for fade animation method to reveal object</button><br>
                 <p class="visible" id="garlicRamen"></p>
 
                 <div id="logic">
@@ -78,7 +77,7 @@
 
                 <div id="iza">
                 <h2>Izakaya (Weekend Special!)</h2>
-                <button id="izaBtn" type="button" onclick="popIzaItem()">Click for Popular Items!</button><br>
+                <button id="izaBtn" type="button">Click for Popular Items!</button><br>
                 <p>Double click to add new class! ^</p>
                 <input type="radio" id="Karaage" name="izakaya">
                 <label class="izafood">Karaage</label>
@@ -121,8 +120,7 @@
             <p id="footer">Thank you for using my website!</p>
         </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>  
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" ></script>
-    <script src="BTeaFinal.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="BTeaFinal.js"></script>
     </body>
  </html>

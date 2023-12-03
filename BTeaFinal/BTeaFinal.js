@@ -1,14 +1,44 @@
-/*9
-    Title: BTeaMidterm.js
+/*
+    Title: BTeaFinal.js
     Author: Brendan Tea
     Purpose: Culmination of Javascript skills
     Originally created on: 12/1/23
     Last modified on: 12/1/23
 */
+//JQuery
+$(document).ready(function(){
+    $('#izaBtn').dblclick(function(){
+        $('#iza').addClass("newStyle");//Req 10: Use jQuery to add class to existing page element
+    });
+
+    $('#footerBtn').click(function(){ //Req 9: use jQuery to remove or hide a page element.
+        $('#footer').remove();
+    });
+
+    $('#gTonkLabel').html('Garlic Tonkatsu Ramen changed text: (Our Most Popular!)'); //Req 11: jQuery method to change page element's content
+
+    $('#garlicRamen').hide();
+    $('#GarlicObjBtn').click(function(){ //Req 13: Use a jQuery animation method.
+        $('#garlicRamen').fadeIn();
+    })
+
+    $('input:text').on({ //Req 12: Use a jQuery event to produce visible results on the page when the user triggers the event.
+        focus: function(){
+            $(this).css("background-color", "gold");
+        },
+        blur: function(){
+            $(this).css("background-color", "white");
+        }
+    });
+
+    $('label').odd().css('text-decoration', 'underline').addClass('visible'); //Req 14: Demonstrate jQuery chaining.
+
+});
+ 
 //Setup functions
 function output(ID, newMessage) {
     var elMessage = document.getElementById(ID);
-    elMessage.innerHTML = newMessage; //Req 19: Use innerHTML to change page element or add a new one.
+    elMessage.innerHTML = newMessage;
 };
 
 //Arrays
@@ -16,19 +46,19 @@ const ramen = ["Veggie", " Miso", " Shio", " Tsukemen Chicken", " Tsukemen Tonka
 const eggs = [1, 2, 3, 4, 5];
 
 function ArrayConcat(ID) { //Req 4: Create and use an array.
-    ramen[2] = ramen[2].concat(" (Low Sodium Concat)",); //Req 6: Use 1 string method.
-    var el = document.getElementById(ID); //Req 21: Select a page element by ID.
-    el.innerHTML = ramen; //Req 19: Use innerHTML to change page element or add a new one. 
+    ramen[2] = ramen[2].concat(" (Low Sodium Concat)",);
+    var el = document.getElementById(ID); 
+    el.innerHTML = ramen;
 };
 
 function listAddRamen(ID) { //Req 4: Create and use an array.
-    var el = document.getElementById(ID); //Req 21: Select a page element by ID.
-    el.innerHTML = ramen; //Req 19: Use innerHTML to change page element or add a new one.
+    var el = document.getElementById(ID);
+    el.innerHTML = ramen;
 };
 
-function LoopEx() { //Req 16: Use a loop.
+function LoopEx() {
     let text = "";
-    for (let i = 0; i < ramen.length; i++) { //Req 5: Use 2 arithmetic operators.
+    for (let i = 0; i < ramen.length; i++) {
         text += ramen[i] + "<br>";
     };
     return "Ramen array Loop: " + text;
@@ -51,27 +81,27 @@ var garTonk = { //Req 17: Create and use an object that has properties and metho
         <br>Eggs: " + this.eggs + "<br>Seaweed: " + this.seaweed + "<br>Menma: " + this.menma + "<br>Moyashi: " + this.moyashi + "<br>Edona: " + this.edona; 
     },
     addEgg: function() {
-        this.eggs++; //Req 5: Use 2 arithmetic operators.
+        this.eggs++; 
         return "New Egg Amount (adding 1 egg): " + this.eggs; //Req 18: Use the keyword this.
     },
     deleteEgg: function() {
-        this.eggs--; //Req 5: Use 2 arithmetic operators.
+        this.eggs--;
         return "New Egg Amount (delete 1 egg): " + this.eggs; //Req 18: Use the keyword this.
     },
     eggMath: function() {
         this.eggs = Math.pow(this.eggs, 4); //Req 15: Use a Math Object method.
         return "Powered Egg Amount (Pow operator): " + this.eggs; //Req 18: Use the keyword this.
-    }, // Req 11: Initialize object with values, call each of the methods and output modified values.
+    },
 };
 
-output("garlicRamen", garTonk.details()); // Req 11: Initialize object with values, call each of the methods and output modified values.
-output("garlicPlusEgg", garTonk.addEgg()); // Req 11: Initialize object with values, call each of the methods and output modified values.
-output("garlicEggMath", garTonk.eggMath()); // Req 11: Initialize object with values, call each of the methods and output modified values.
-output("garlicMinusEgg", garTonk.deleteEgg()); // Req 11: Initialize object with values, call each of the methods and output modified values.
+output("garlicRamen", garTonk.details());
+output("garlicPlusEgg", garTonk.addEgg());
+output("garlicEggMath", garTonk.eggMath());
+output("garlicMinusEgg", garTonk.deleteEgg());
 
 //Comparison and Operators
-function andOP() { 
-    if (garTonk.edona || garTonk.moyashi) { // Req 17 & 7: garTonk.edona is Falsy with no comparison operator. Use at least 1 logical operator.
+function andOP() { //Req 7: Demonstrate the use of logical operators.
+    if (garTonk.edona || garTonk.moyashi) {
         return "OR Logical Operator result: There is either edona or moyashi in the ramen.";
     } else {
         return "Error";
@@ -81,7 +111,7 @@ function andOP() {
 output("OR", andOP());
 
 function ifElseConstruct() {
-    if (eggs[1]<eggs[3]) { //Req 5 & 6: Use if/else construct or switch statement with at least three case values and a default code block. Use at least two comparison operators.
+    if (eggs[1]<eggs[3]) { //Req 5 & 6: Use if/else construct or switch statement Use comparison operator.
         return "If-Else construct result: Eggs[3] is bigger than Eggs[1].";
     } else {
         return "If-Else construct result: Eggs[1] is bigger than Eggs[3]."
@@ -89,7 +119,7 @@ function ifElseConstruct() {
 };
 
 function equalTo() { 
-    if (eggs[2]!==eggs[4]) { //Req 5 & 6: Use if/else construct or switch statement with at least three case values and a default code block. Use at least two comparison operators.
+    if (eggs[2]!==eggs[4]) { //Req 5 & 6: Use if/else construct or switch statement Use comparison operator.
         return "Equal to operator result: eggs[2] is NOT equal to eggs[4].";
     } else {
         return "Error";
@@ -100,12 +130,12 @@ output("ifElse", ifElseConstruct());
 output("equalto", equalTo());
 
 //Parsing
-var elParse = document.getElementById("Parse"); //Req 21: Select a page element by ID.
+var elParse = document.getElementById("Parse");
 
 function parseGar(numGarlic) {
     numGarlic = parseInt(numGarlic); // Req 8: Use ParseInt to convert a string to an integer.
     elParse.textContent = "ParseInt garlic result: " + numGarlic + " \
-    initial garlic scoops" + " + 5 additional garlic scoops = " + (numGarlic + 5) + " total garlic scoops."; // Req 18: Select a single page element and change it with textContent.
+    initial garlic scoops" + " + 5 additional garlic scoops = " + (numGarlic + 5) + " total garlic scoops.";
 };
 
 parseGar("2");
@@ -118,7 +148,7 @@ function displayTime() {
 output("time", displayTime());
 
 //Day Function
-function daySwitch() { //Req 5: Use if/else construct or switch statement with at least three case values and a default code block. 
+function daySwitch() { //Req 5 & 6: Use if/else construct or switch statement Use comparison operator.
  
     switch (5) { 
         case 0:
@@ -150,81 +180,68 @@ function daySwitch() { //Req 5: Use if/else construct or switch statement with a
 output("dayCycle", daySwitch());
 
  //Selecting Classes
-function popIzaItem() { //Req 20: Select page elements by class name.
+function popIzaItem() { 
     const izakayaItemsSelection = document.getElementsByClassName("izafood");
     izakayaItemsSelection[0].innerHTML = "Karaage (#1 Popular Izakaya Item!)";
     izakayaItemsSelection[1].innerHTML = "Pork Gyoza (#2 Popular Izakaya Item!)";
 };
 
-//JQuery
-$('footerBtn').click(function(){ //Req 9: use jQuery to remove or hide a page element.
-    $('footer').remove();
-});
 
-$('izaBtn').on({
-    dblclick: function() {
-        $('iza').addClass('newStyle');
-    }
-});
 
 //Events
-function bgColorChange(ID) { //Req 28: Create 2 focus/blur or focusin/focusout events. 
-    var el = document.getElementById(ID); //Req 21: Select a page element by ID.
+function bgColorChange(ID) { 
+    var el = document.getElementById(ID); 
     el.style.backgroundColor = "gold";
 };
 
-function logicBorder(ID) { //Req 28: Create 2 focus/blur or focusin/focusout events. 
+function logicBorder(ID) { 
     var el = document.getElementById(ID);
     el.style.borderStyle = "solid";
 };
 
-function logicBorderNone(ID) { //Req 28: Create 2 focus/blur or focusin/focusout events. 
+function logicBorderNone(ID) { 
     var el = document.getElementById(ID);
     el.style.borderStyle = "none";
 };
 
-function bgColorChangeReg(ID) { //Req 28: Create 2 focus/blur or focusin/focusout events. 
-    var el = document.getElementById(ID); //Req 21: Select a page element by ID.
+function bgColorChangeReg(ID) { 
+    var el = document.getElementById(ID); 
     el.style.backgroundColor = "white";
 };
 
 function redColorText(ID) {
-    var el = document.getElementById(ID); //Req 21: Select a page element by ID.
+    var el = document.getElementById(ID); 
     el.style.color = "red";
 };
 
-function bgBodyColorChange(ID) { //Req 30: Create at least 1 keyboard event with visible results, (Pressing a key)
+function bgBodyColorChange(ID) { 
     var el = document.getElementById(ID);
     el.style.backgroundColor = "rgb(24, 3, 3)"
 };
 
-function bgBodyColorChangeReg(ID) { //Req 30: Create at least 1 keyboard event with visible results, (Releasing a key)
+function bgBodyColorChangeReg(ID) {
     var el = document.getElementById(ID);
     el.style.backgroundColor = "black"
 };
 
-function leavePage() { //Req 33: Create event that alerts the user before leaving the page.
+function leavePage() { 
     return;
-};
-
-function changeText(val) { // Req 32: Create mutation event with visible results
-    val.innerHTML = "Mutation Event! KiZuKi OrDeR fOrM";
 };
 
 
 
 var logicMouseOver = document.getElementById("logic"); 
-logicMouseOver.addEventListener("mouseover", function() { //Req 29: Create 2 mouse events with visible changes (mouseover event).
-    logicBorder("logic"); //Req 28: Create 2 focus/blur or focusin/focusout events.
+logicMouseOver.addEventListener("mouseover", function() { 
+    logicBorder("logic"); 
 });
 
-logicMouseOver.addEventListener("mouseout", function() { //Req 29: Create 2 mouse events with visible changes (mouseout event).
-    logicBorderNone("logic"); //Req 28: Create 2 focus/blur or focusin/focusout events.
+logicMouseOver.addEventListener("mouseout", function() { 
+    logicBorderNone("logic");
 });
 
-var submitConfirmation = document.getElementById("subreminder"); //Req 24: Use event listener with parameter to produce visuble results on screen when user clicks page element.
-submitConfirmation.addEventListener("click", function() { //Req 29: Create 2 mouse events with visible changes (click event).
-    reminderClickEvent(this); //Req 18: Use the keyword this.
+var submitConfirmation = document.getElementById("subreminder"); 
+submitConfirmation.addEventListener("click", function() {
+    reminderClickEvent(this);
 });
 
 function reminderClickEvent(ID) {
@@ -238,38 +255,15 @@ submitConfirmation.addEventListener("mouseout", function() {
 });
 
 var bgBody = document.getElementById("body");
-bgBody.addEventListener("keydown", function() { //Req 30: Create at least 1 keyboard event with visible results, (Pressing a key)
+bgBody.addEventListener("keydown", function() { 
     bgBodyColorChange("body");
 });
 
-bgBody.addEventListener("keyup", function() { //Req 30: Create at least 1 keyboard event with visible results, (Releasing a key)
+bgBody.addEventListener("keyup", function() { 
     bgBodyColorChangeReg("body");
 });
 
 var message = document.getElementById("form"); 
 message.addEventListener("submit", function() { //Req 31: Create form event that produces visible result on page (onsubmit event).
         alert("Your order has been submitted! Thank you!");
-    });
-
-//Event Bubbling
-const body = document.getElementsByTagName("body")[0] // Req 25: Demonstrate event bubbling.
-const div = document.getElementsByTagName("div")[4]
-const ul = document.getElementsByTagName("ul")[0]
-const li = document.getElementsByTagName("li")[0]
-
-body.addEventListener("click", () => { 
-    console.log("body clicked");
-});
-
-div.addEventListener("click", () => {
-    console.log("addIza div clicked");
-});
-
-ul.addEventListener("click", () => {
-    console.log("ul element clicked");
-});
-
-li.addEventListener("click", () => { // Req 26: Use method to stop event bubbling.
-    event.stopPropagation(); //Req 27: Use event object in function or method.
-    console.log("li element clicked");
 });
