@@ -3,7 +3,7 @@
     Author: Brendan Tea
     Purpose: Culmination of Javascript skills
     Originally created on: 12/1/23
-    Last modified on: 12/1/23
+    Last modified on: 12/3/23
 */
 h1 {
     text-align: center;
@@ -22,6 +22,19 @@ input[type=text] {
     width: 50%;
     border-radius: 5px;
 }
+
+input[type=email] {
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+}
+
+input[type=tel] {
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+}
+
 input[type=submit] {
     text-align: center;
     padding: 12px 20px;

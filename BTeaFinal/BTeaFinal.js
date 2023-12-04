@@ -3,12 +3,19 @@
     Author: Brendan Tea
     Purpose: Culmination of Javascript skills
     Originally created on: 12/1/23
-    Last modified on: 12/1/23
+    Last modified on: 12/3/23
 */
 //JQuery
 $(document).ready(function(){
-    $('#izaBtn').dblclick(function(){
-        $('#iza').addClass("newStyle");//Req 10: Use jQuery to add class to existing page element
+
+    $('#izaBtn').click(function(){ //Req 10: Use jQuery to add a class to an existing page element.
+        $('#iza').addClass("newStyle");
+    });
+
+    $('#izaPopular').click(function(){ //Req 19: Use jQuery .each() method to process selection that has multiple page elements.
+        $('.izafood').each(function(){
+            alert($(this).text());
+        });
     });
 
     $('#footerBtn').click(function(){ //Req 9: use jQuery to remove or hide a page element.
@@ -22,7 +29,7 @@ $(document).ready(function(){
         $('#garlicRamen').fadeIn();
     })
 
-    $('input:text').on({ //Req 12: Use a jQuery event to produce visible results on the page when the user triggers the event.
+    $('input:text').on({ //Req 12, 24, 25: Use a jQuery event to produce visible results on the page when the user triggers the event. Use at least one form method [focus, blur].
         focus: function(){
             $(this).css("background-color", "gold");
         },
@@ -33,6 +40,52 @@ $(document).ready(function(){
 
     $('label').odd().css('text-decoration', 'underline').addClass('visible'); //Req 14: Demonstrate jQuery chaining.
 
+    //Bubbling
+    $('body').click(function(){
+        console.log("body clicked");
+    });
+
+    $('div').click(function(){
+        console.log("div clicked");
+    });
+
+    $('ul').click(function(){
+        console.log("ul clicked");
+    });
+
+    $('li').click(function(){
+        event.stopPropagation(); //Req 20: use event object in a jquery method.
+        console.log("li clicked");
+    });
+
+    var $form = $('#form'); 
+    $('#outputArea').hide(); //Req 8: Output area that is blank until submit is pressed
+
+    $form.on('submit', function(e){ //Req 9: Output area echos information entered in user information field when submitted.
+        e.preventDefault();
+        var fNameGet = $('input#fname').val();
+        $('#OPname').append(fNameGet + '');
+        var lNameGet = $('input#lname').val();
+        $('#OPname').append(lNameGet);
+        var emailGet = $('input#email').val();
+        $('#OPemail').append(emailGet);
+        var phoneGet = $('input#phone').val();
+        $('#OPphone').append(phoneGet);
+        var StrOneGet = $('input#strAddress1').val();
+        $('#OPaddress').append(StrOneGet + '');
+        var StrTwoGet = $('input#strAddress2').val();
+        $('#OPaddress').append(StrTwoGet + '');
+        var cityGet = $('input#city').val();
+        $('#OPaddress').append(cityGet + '');
+        var stateGet = $('input#state').val();
+        $('#OPaddress').append(stateGet + '');
+        var zipGet = $('input#zipCode').val();
+        $('#OPaddress').append(zipGet);
+
+        $('#outputArea').show();
+    });
+    
+        
 });
  
 //Setup functions
@@ -180,11 +233,11 @@ function daySwitch() { //Req 5 & 6: Use if/else construct or switch statement Us
 output("dayCycle", daySwitch());
 
  //Selecting Classes
-function popIzaItem() { 
+/*function popIzaItem() { 
     const izakayaItemsSelection = document.getElementsByClassName("izafood");
     izakayaItemsSelection[0].innerHTML = "Karaage (#1 Popular Izakaya Item!)";
     izakayaItemsSelection[1].innerHTML = "Pork Gyoza (#2 Popular Izakaya Item!)";
-};
+};*/
 
 
 

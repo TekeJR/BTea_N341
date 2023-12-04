@@ -3,7 +3,7 @@
     Author: Brendan Tea
     Purpose: Culmination of Javascript skills 
     Originally created on: 12/1/23
-    Last modified on: 12/1/23
+    Last modified on: 12/3/23
 -->
 <!DOCTYPE html>
 <!--My theme is an online order page based off of the restaurant I work at-->
@@ -16,10 +16,10 @@
     <body id="body" onbeforeunload="return leavePage()">
             
             <div id="main">
-            <form id="form">
+            <form id="form" method="get">
 
                 <div id="info">
-                <h1 onmouseover="changeText(this)">Kizuki Order Form</h1>
+                <h1>Kizuki Order Form</h1>
                 <p class="midmessage">Hover over title for mutation event ^</p>
                 <p class="visible" id="dayCycle"></p>
                 <p class="visible" id="time"></p>
@@ -29,9 +29,9 @@
                 <input type="text" id="fname" name="userFName" placeholder="First Name..." onfocus="bgColorChange('fname')" onblur="bgColorChangeReg('fname')">
                 <input type="text" id="lname" name="userLName" placeholder="Last Name..." onfocus="bgColorChange('lname')" onblur="bgColorChangeReg('lname')"><br>
                 <label>Email (every other label bolded and underlined, chaining as well)</label><br>
-                <input type="text" id="email" name="email" onfocus="bgColorChange('email')" onblur="bgColorChangeReg('email')"><br>
+                <input type="email" id="email" name="email" onfocus="bgColorChange('email')" onblur="bgColorChangeReg('email')"><br>
                 <label>Phone Number</label><br>
-                <input type="text" id="phone" name="phoneNum" onfocus="bgColorChange('phone')" onblur="bgColorChangeReg('phone')"><br>
+                <input type="tel" id="phone" name="phoneNum" onfocus="bgColorChange('phone')" onblur="bgColorChangeReg('phone')"><br>
                 <label>Delivery Address</label><br>
                 <input type="text" id="strAddress1" name="userAddress" placeholder="Street Address..." onfocus="bgColorChange('strAddress1')" onblur="bgColorChangeReg('strAddress1')"><br>
                 <input type="text" id="strAddress2" name="userAddress" placeholder="Street Address Line 2..." onfocus="bgColorChange('strAddress2')" onblur="bgColorChangeReg('strAddress2')"><br>
@@ -77,8 +77,8 @@
 
                 <div id="iza">
                 <h2>Izakaya (Weekend Special!)</h2>
-                <button id="izaBtn" type="button">Click for Popular Items!</button><br>
-                <p>Double click to add new class! ^</p>
+                <button type="button" id="izaPopular">Click for Popular Items! (.each() function)</button><br>
+                <button id="izaBtn" type="button">Click for Popular Items Highlight (add new class)!</button><br>
                 <input type="radio" id="Karaage" name="izakaya">
                 <label class="izafood">Karaage</label>
                 <p>Marinated chicken fried served with a lemon slice and spicy mayo.</p>
@@ -94,7 +94,7 @@
                 <div id="addIza">
                 <span>Additional Izakaya Options (click here for bubbling in console)</span>
                 <ul>
-                    <li>Edamame (click me for no event bubbling in console)</li>
+                    <li>Edamame (click me for no event bubbling in console, event obj)</li>
                     <li>Potato Croquette</li>
                     <li>Karaage Bun</li>
                     <li>Pork Bun</li>
@@ -115,6 +115,18 @@
                 <span class="visible" id="submitReminder"></span>
                 <input id="submitbtn" class="button" type="submit" value="Submit Order (form event)">
             </form>
+            
+            <div id="outputArea">
+                <label id="OPnamelb">Name: </label>
+                <p id="OPname"></p>
+                <label id="OPemaillb">Email: </label>
+                <p id="OPemail"></p>
+                <label id="OPphonelb">Phone Number: </label>
+                <p id="OPphone"></p>
+                <label id="OPaddresslb">Address: </label>
+                <p id="OPaddress"></p>
+            </div>
+
             <input id="footerBtn" class="button" type="button" value="Hide Footer">
             
             <p id="footer">Thank you for using my website!</p>
